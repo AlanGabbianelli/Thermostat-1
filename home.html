@@ -3,23 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
+    <script type="text/javascript" src="jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="Thermostat.js"></script>
+    <script type="text/javascript" src='script.js'></script>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
   </head>
-  <body>
-    <section>
-      <h1>Temperature in London: <span id="temp"></span></h1>
+  <body id="body">
+    <section id="thermostat">
+      <h1>Temperature: <span id="thermostat-temperature"></span></h1>
       <p>
-        <button type="button" id="temp-up" autofocus>+</button>
         <button type="button" id="temp-down">-</button>
+        <button type="button" id="temp-up">+</button>
         <button type="button" id="temp-reset">reset</button>
         power saving mode is <span id="power-saving-status"></span>
         <button type="button"id="PSM-on">Power Saver On</button>
         <button type="button"id="PSM-off">Power Saver Off</button>
       </p>
     </section>
-    <script type="text/javascript" src="jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="Thermostat.js"></script>
-    <script type="text/javascript" src='script.js'></script>
-    <link type="text/css" rel="stylesheet" href="stylesheet.css">
-    <div>Temp: <span id="api"></span></div>
+    <br>
+    <section id="weather-api">
+      <section id="get-city-info">
+        <h4>Let's see what's going on in...</h4>
+        <p>
+          Country:<input id="country" type="text" name="country" value="UK">
+          City:<input id="city" type="text" name="city" value="London">
+          <input id="go" type="button" value="Go">
+        </p>
+      </section>
+      <br>
+      <section id="display-city-info">
+        <p>City: <span id="current-city"></span></p>
+        <p>Temperature: <span id="city-temperature"></span></p>
+        <div id="city-weather">
+          <p>Weather: <span id="city-weather-condition"></span></p>
+          <img id="city-weather-image">
+        </div>
+      </section>
+    </section>
   </body>
 </html>
